@@ -5,60 +5,85 @@
    <title>Home Screen</title>
 </head>
 <body>
-    <h1>Tuiter</h1>
-    <h2>Home</h2>
-    <img width="48px" height="48px"
-        src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000"/>
-    <br/>
-    <form id="textarea">
-        <textarea  placeholder="What's happening?"></textarea>
-    </form>
-    <select id="select-one">
-    <option selected value="EVERYONE">Everyone can reply</option>
-    <option value="FOLLOWING">People you follow</option>
-    <option value="MENTIONED">
-        Only people you mention</option>
-    </select>
-    <hr>
-
-    <input type="file"/>
-    <button type="button">Tuit</button>
-    <hr>
-    <ul>
-        <li>
-            <a href="topic.html">Topic 123</a> </br>
-            <img width="48px" height="48px"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Atari_logo_alt.svg/1200px-Atari_logo_alt.svg.png"/>
-        <a href="profile.html">Alice</a>@alice - 2h
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-        <a href="reply.html">Reply</a> 123 | <a href="retuit.html">Retuit</a> 234 | 
-        <a href="like.html">Like</a> 345 | <a href="share.html">Share</a>
-        </li>
-
-        <li>
-            <a href="topic.html">Topic 345</a> </br>
-            <img width="48px" height="48px"
-        src="data:image/jpeg;base64,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"/>
-        <a href="profile.html">Srinidhi</a>@srinidhi - 3h
-        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.</p>
-        <a href="reply.html">Reply</a> 123 | <a href="retuit.html">Retuit</a> 234 | 
-        <a href="like.html">Like</a> 345 | <a href="share.html">Share</a>
-        </li>
-
-        <li>
-            <a href="topic.html">Topic 456</a> </br>
-            <video width="320" height="240" controls>
-                <source src="movie.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <br/>
-            <img width="48px" height="48px"
-        src="https://freesvg.org/img/myAvatar.png"/>
-        <a href="profile.html">Aditya</a>@aditya - 4h
-        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-        <a href="reply.html">Reply</a> 123 | <a href="retuit.html">Retuit</a> 234 | 
-        <a href="like.html">Like</a> 345 | <a href="share.html">Share</a>
-        </li>
-    </ul>
+    <table>
+        <tbody>
+          <tr valign="top">
+            <td colspan="3"></td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="messages.html">Messages</a></li>
+                <li><a href="bookmarks.html">Bookmarks</a></li>
+                <li><a href="lists.html">Lists</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="tuit.html">Tuit</a></li>
+                <li><a href="reply.html">Reply</a></li>
+              </ul>
+            </td>
+            <td>
+                <h1>Tuiter</h1>
+                <h2>Home</h2>
+                <img width="48px" height="48px"
+                    src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000"/>
+                <br/>
+                <form id="textarea">
+                    <textarea  placeholder="What's happening?"></textarea>
+                </form>
+                <select id="select-one">
+                <option selected value="EVERYONE">Everyone can reply</option>
+                <option value="FOLLOWING">People you follow</option>
+                <option value="MENTIONED">
+                    Only people you mention</option>
+                </select>
+                <hr>
+            
+                <input type="file"/>
+                <button type="button">Tuit</button>
+                <hr>
+                <ul>
+                    <li>
+                        <a href="topic.html">Topic 123</a> </br>
+                        <img width="48px" height="48px"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Atari_logo_alt.svg/1200px-Atari_logo_alt.svg.png"/>
+                    <a href="profile.html">Srinidhi</a>@Srinidhi - 2h
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    <a href="reply.html">Reply</a> 123 | <a href="retuit.html">Retuit</a> 234 | 
+                    <a href="like.html">Like</a> 345 | <a href="share.html">Share</a>
+                    </li>
+            
+                    <li>
+                        <a href="topic.html">Topic 345</a> </br>
+                        <img width="48px" height="48px"
+                    src="data:image/jpeg;base64,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"/>
+                    <a href="profile.html">Rohithi</a>@rohithi - 3h
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.</p>
+                    <a href="reply.html">Reply</a> 123 | <a href="retuit.html">Retuit</a> 234 | 
+                    <a href="like.html">Like</a> 345 | <a href="share.html">Share</a>
+                    </li>
+            
+                    <li>
+                        <a href="topic.html">Topic 456</a> </br>
+                        <br/>
+                        <img width="48px" height="48px"
+                    src="https://freesvg.org/img/myAvatar.png"/>
+                    <a href="profile.html">Aditya</a>@aditya - 4h
+                    <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/kayOhGRcNt4" title="Tell Me About Yourself - A Good Answer to This Interview Question" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <a href="reply.html">Reply</a> 123 | <a href="retuit.html">Retuit</a> 234 | 
+                    <a href="like.html">Like</a> 345 | <a href="share.html">Share</a>
+                    </li>
+                </ul>
+            </td>
+            <td></td>
+          </tr>
+          <tr valign="top">
+            <td colspan="3"></td>
+          </tr>
+        </tbody>
+      </table>
 </body>
 </html>
