@@ -1,0 +1,177 @@
+body {
+    font-family: 'Chirp', sans-serif; 
+}
+
+.wd-container {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    margin: auto;
+    width: 50vw;
+    padding: 10px;
+}
+
+.wd-nav {
+    /* border: solid black; */
+    padding: 5px;
+
+}
+
+.wd-navigation {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    /* border: solid black; */
+}
+
+.wd-nav-1 {
+    display: flex;
+    justify-content: left;
+    width: 90%;
+}
+
+.wd-nav-back {
+    margin-right: 25px;
+    background-color: #ffffff;
+    font-size:20px;
+    box-shadow: none;
+    border: none;
+}
+
+.wd-nav-curr-tab p {
+    padding: 0px;
+    margin: 0px;
+    font-weight: 500;
+    font-size: large;
+}
+
+.wd-nav-options {
+    background-color: #ffffff;
+    border: none;
+    box-shadow: none;
+}
+
+.wd-nav-options .wd-tweet-itm-option{
+    font-size:20px;
+    background-color: #ffffff;
+    box-shadow: none;
+    border: none;
+}
+
+.wd-tweets {
+    margin: 10px;
+    /* border: solid black; */
+}
+
+.wd-tweet-itm {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.wd-tweet-itm-icon-img {
+    border-radius: 50%;
+    width:50px;
+    height: 50px;
+    /* border: solid black; */
+}
+
+
+.wd-tweet-itm-body {
+    width: 70%;
+    /* border: solid black; */
+
+}
+
+.wd-tweet-itm-option {
+    padding: 20px;
+    /* border: solid black; */
+}
+
+.wd-tweet-itm-body .wd-title {
+    display: flex;
+    justify-content: left;
+}
+
+.wd-tweet-itm-body .wd-title-acc {
+    font-weight: 600;
+}
+
+.wd-tweet-itm-body .wd-title-icon {
+    height:18px;
+    padding: 0px;
+    transform: translateY(100%);
+}
+
+.wd-title-i {
+    margin-right: 5px;
+}
+
+.wd-title .wd-title-id, .wd-title .wd-title-date{
+    font-weight: 400;
+    color: #AAB8C2;
+}
+
+.wd-tweet-tw p {
+    /* border: solid black; */
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+.wd-title {
+    /* border: solid black; */
+    margin: 0px;
+    padding: px;
+    /* height: 40px; */
+}
+
+.wd-tweet-link {
+    border: 1px solid #657786;
+    border-radius: 20px;
+}
+
+.wd-tweet-link-img {
+    width: 100%;
+    border-radius: 20px;
+    padding-bottom: 5px;
+}
+
+.wd-tweet-link-text-add, .wd-tweet-link-text-body {
+    font-weight: 400;
+    color:  #AAB8C2;
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* border: solid black; */
+    margin: 3px;
+}
+
+.wd-tweet-link-text-title {
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* border: solid black; */
+    margin: 3px;
+}
+
+.wd-tweet-controls, .wd-tweet-con-i {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wd-tweet-controls {
+    padding: 20px;
+}
+
+.wd-tweet-con-i i {
+    font-size: 18px;
+    margin-right: 3px;
+}
+
+
+
+
+
+
+
+
