@@ -1,13 +1,9 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import Nav from "../nav";
 import { Routes, Route } from "react-router";
 import NavigationSidebar from "./navigation-sidebar";
 import HomeScreen from "./home-screen";
 import BookmarksScreen from "./bookmarks-screen";
 import ProfileScreen from "./profile-screen";
-
-import WhoToFollowListItem from "./who-to-follow-list/who-to-follow-list-item";
 import WhoToFollowList from "./who-to-follow-list";
 import ExploreScreen from "./explore-screen";
 

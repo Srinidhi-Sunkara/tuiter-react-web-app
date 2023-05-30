@@ -22,17 +22,17 @@ function ExploreScreen() {
      </div>
      <ul className="nav nav-pills mb-2 mt-2">
        <li className="nav-item">
-         <a className="nav-link active">For You</a>
+         <a className="nav-link active" href="/">For You</a>
        </li>
        <li className="nav-item">
-         <a className="nav-link">Trending</a>
+         <a className="nav-link" href="/">Trending</a>
        </li>
        <li className="nav-item">
-         <a className="nav-link">News</a>
+         <a className="nav-link" href="/">News</a>
        </li>
      </ul>
      <div className="position-relative mb-2">
-       <img src="https://media.istockphoto.com/id/1131418344/photo/space-shuttle-in-the-rays-of-sun.jpg?s=612x612&w=0&k=20&c=sWDbIkxaV4-0Ou8cgUJa6a06bcF78hkJ5GvL8WZmJr4=" className="w-100"/>
+       <img alt="not found" src="https://media.istockphoto.com/id/1131418344/photo/space-shuttle-in-the-rays-of-sun.jpg?s=612x612&w=0&k=20&c=sWDbIkxaV4-0Ou8cgUJa6a06bcF78hkJ5GvL8WZmJr4=" className="w-100"/>
        <h1 className="position-absolute wd-nudge-up text-white">
          SpaceX Starship</h1>
      </div>
