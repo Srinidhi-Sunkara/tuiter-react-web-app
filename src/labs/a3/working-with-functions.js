@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import ArrowFunctions from "./arrow-functions";
 import ImpliedReturn from "./implied-return";
 import FunctionParenthesisAndParameters from "./function-parenthesis-and-parameters";

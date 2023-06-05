@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 function TemplateLiterals(){
     const five = 2 + 3;
     const result1 = "2 + 3 = " + five;

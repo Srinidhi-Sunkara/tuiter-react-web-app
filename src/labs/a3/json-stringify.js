@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 function JSONStringify(){
     const squares = [1, 4, 16, 25, 36];
     return(

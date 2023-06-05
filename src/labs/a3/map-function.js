@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 function MapFunction(){
     let numberArray1 = [1, 2, 4, 5,6];
     const square = a => a * a;

@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 const WhoToFollowListItem = (
  {
    who = { userName: 'NASA', handle: 'NASA', avatarIcon: 'https://www.nasa.gov/sites/default/files/images/nasaLogo-570x450.png' }

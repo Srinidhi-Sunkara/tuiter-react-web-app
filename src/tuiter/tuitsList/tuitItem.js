@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import {useDispatch} from "react-redux";
 import { deleteTuit } from "../reducers/tuits-reducer";
 import 'bootstrap/dist/css/bootstrap.css';
@@ -40,7 +40,7 @@ const TuitItem = (
   <li className="list-group-item">
     <div className="row">
       <div className="col-1">
-    <img className="rounded-circle" height={48} width={48} src={`${tuit.image}`} alt="not found"/>
+    <img className="rounded-circle" height={40} width={48} src={`${tuit.image}`} alt="not found"/>
     </div>
     <div className="col">
     <FaTimes className="bi bi-x-lg float-end"  onClick={() => deleteTuitHandler(tuit._id)} />

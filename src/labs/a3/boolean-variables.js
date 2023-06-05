@@ -1,4 +1,4 @@
-import React from "react";
+// // import React from "react";
 function BooleanVariables(){
     let numberVariable = 123;
     let floatingPointNumber = 234.345;

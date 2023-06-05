@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 const TuitSummaryItem = (
  {
    tuit = {
@@ -20,7 +20,7 @@ const TuitSummaryItem = (
        <div>{tuit.title}</div>
      </div>
      <div className="col-2">
-       <img width={70} height={70} className="float-end rounded-3" src={`${tuit.image}`} alt="not found"/>
+       <img width={70} height={50} className="float-end rounded-3" src={`${tuit.image}`} alt="not found"/>
      </div>
    </div>
   </li>
