@@ -1,4 +1,5 @@
 // import React from "react";
+import { useState } from 'react';
 import {useDispatch} from "react-redux";
 import { deleteTuit } from "../reducers/tuits-reducer";
 import 'bootstrap/dist/css/bootstrap.css';
@@ -36,6 +37,27 @@ const TuitItem = (
   const deleteTuitHandler = (id) => {
     dispatch(deleteTuit(id))};
   library.add(fas);
+
+  const [isLiked, setIsLiked] = useState(tuit.liked);
+  const [isLikes, setIsLikes] = useState(tuit.likes);
+
+
+  const handleLikeClick = () => {
+    setIsLiked(!isLiked);
+
+    if(!isLiked)
+    {
+      
+      setIsLikes(isLikes+1);
+    }
+    else
+    {
+      setIsLikes(isLikes-1);
+    }
+
+  };
+
+
  return(
   <li className="list-group-item">
     <div className="row">
@@ -55,8 +77,14 @@ const TuitItem = (
             <div class="row">
               <div class="col"><FontAwesomeIcon icon={faComment}/> {tuit.replies}  </div>
               <div class="col"> <FontAwesomeIcon icon={faRetweet}/> {tuit.retuits}</div>
-              <div class="col">  {tuit.liked?<FontAwesomeIcon icon={faHeart} style={{color:'red'}}/> :<FontAwesomeIcon icon={faHeart}/> }
-          {tuit.likes}  </div>
+              {/* <div class="col">  {tuit.liked?<FontAwesomeIcon icon={faHeart} style={{color:'red'}}/> :<FontAwesomeIcon icon={faHeart}/> }
+          {tuit.likes}  </div> */}
+          <div class="col">   <FontAwesomeIcon
+                                  icon={faHeart}
+                                  style={{ color: isLiked ? 'red' : 'black' }}
+                                  onClick={handleLikeClick}
+                                />
+          {isLikes}  </div>
           <div class="col"> <FontAwesomeIcon icon={faUpload}/></div>
        
           </div>
