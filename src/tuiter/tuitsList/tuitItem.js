@@ -1,5 +1,5 @@
 // import React from "react";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {useDispatch} from "react-redux";
 import { deleteTuit } from "../reducers/tuits-reducer";
 import 'bootstrap/dist/css/bootstrap.css';
@@ -37,10 +37,18 @@ const TuitItem = (
   const deleteTuitHandler = (id) => {
     dispatch(deleteTuit(id))};
   library.add(fas);
-
+   
+  const [user,setUser]=useState(tuit);
   const [isLiked, setIsLiked] = useState(tuit.liked);
-  const [isLikes, setIsLikes] = useState(tuit.likes);
-
+  // const [isLikes, setIsLikes] = useState(tuit.likes);
+  
+  useEffect(()=>{
+    const test=async()=>{
+      setUser(tuit);
+      setIsLiked(tuit.liked);
+    };
+    test();
+  },[tuit]);
 
   const handleLikeClick = () => {
     setIsLiked(!isLiked);
@@ -48,11 +56,13 @@ const TuitItem = (
     if(!isLiked)
     {
       
-      setIsLikes(isLikes+1);
+      // setIsLikes(isLikes+1);
+          setUser({...user,likes:user.likes+1})
     }
     else
     {
-      setIsLikes(isLikes-1);
+      // setIsLikes(isLikes-1);
+      setUser({...user,likes:user.likes-1})
     }
 
   };
@@ -62,21 +72,21 @@ const TuitItem = (
   <li className="list-group-item">
     <div className="row">
       <div className="col-1">
-    <img className="rounded-circle" height={40} width={48} src={`${tuit.image}`} alt="not found"/>
+    <img className="rounded-circle" height={40} width={48} src={`${user.image}`} alt="not found"/>
     </div>
     <div className="col">
-    <FaTimes className="bi bi-x-lg float-end"  onClick={() => deleteTuitHandler(tuit._id)} />
-            <b> {tuit.userName}</b>
+    <FaTimes className="bi bi-x-lg float-end"  onClick={() => deleteTuitHandler(user._id)} />
+            <b> {user.userName}</b>
             <span style={{ padding: '0 2px' }}> <FontAwesomeIcon icon={faCheckCircle} style={{ fontSize: '15px', color:'#1DA1F2'}} /> </span>
-            {tuit.handle}
-            <span style={{ padding: '0 2px' }}>{String.fromCharCode(parseInt("2022", 16))} </span> {tuit.time}
+            {user.handle}
+            <span style={{ padding: '0 2px' }}>{String.fromCharCode(parseInt("2022", 16))} </span> {user.time}
             <br/>
-            {tuit.tuit}
+            {user.tuit}
            
           <div>
             <div class="row">
-              <div class="col"><FontAwesomeIcon icon={faComment}/> {tuit.replies}  </div>
-              <div class="col"> <FontAwesomeIcon icon={faRetweet}/> {tuit.retuits}</div>
+              <div class="col"><FontAwesomeIcon icon={faComment}/> {user.replies}  </div>
+              <div class="col"> <FontAwesomeIcon icon={faRetweet}/> {user.retuits}</div>
               {/* <div class="col">  {tuit.liked?<FontAwesomeIcon icon={faHeart} style={{color:'red'}}/> :<FontAwesomeIcon icon={faHeart}/> }
           {tuit.likes}  </div> */}
           <div class="col">   <FontAwesomeIcon
@@ -84,7 +94,7 @@ const TuitItem = (
                                   style={{ color: isLiked ? 'red' : 'black' }}
                                   onClick={handleLikeClick}
                                 />
-          {isLikes}  </div>
+          {user.likes}  </div>
           <div class="col"> <FontAwesomeIcon icon={faUpload}/></div>
        
           </div>
