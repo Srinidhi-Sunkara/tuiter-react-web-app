@@ -9,7 +9,8 @@ import { IoIosCalendar } from 'react-icons/io';
 import { MdGif } from 'react-icons/md';
 
 
-import {createTuit} from "./reducers/tuits-reducer";
+// import {createTuit} from "./reducers/tuits-reducer";
+import {createTuitThunk} from "./services/tuits-thunks";
 import {useDispatch} from "react-redux";
 
 
@@ -22,7 +23,7 @@ const WhatsHappening = () => {
    const newTuit = {
     tuit: whatsHappening
   }
-  dispatch(createTuit(newTuit));
+  dispatch(createTuitThunk(newTuit));
   setWhatsHappening("");
 
  }

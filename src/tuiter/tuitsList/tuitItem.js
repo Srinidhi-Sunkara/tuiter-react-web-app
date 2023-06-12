@@ -1,16 +1,20 @@
 // import React from "react";
 import { useEffect, useState } from 'react';
 import {useDispatch} from "react-redux";
-import { deleteTuit } from "../reducers/tuits-reducer";
+// import { deleteTuit } from "../reducers/tuits-reducer";
+import {deleteTuitThunk} from "../services/tuits-thunks";
 import 'bootstrap/dist/css/bootstrap.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-import { faComment, faRetweet, faHeart,faUpload} from '@fortawesome/free-solid-svg-icons';
+import { faComment, faRetweet,faUpload} from '@fortawesome/free-solid-svg-icons';
 import { FaTimes } from 'react-icons/fa';
+import { faThumbsDown,faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 
 
+
+import { updateTuitThunk } from "../services/tuits-thunks";
 
 
 const TuitItem = (
@@ -26,6 +30,7 @@ const TuitItem = (
      "replies": 234,
      "retuits": 543,
      "likes": 3456,
+     "dislikes":42,
      "handle": "@spacex",
      "tuit":"Looks like that Model S Plaid is breaking more than just the sound barrier! Congrats on the record-setting lap. Let's hope this accomplishment sparks some healthy competition in the EV market " 
    }
@@ -35,37 +40,47 @@ const TuitItem = (
 ) => {
   const dispatch = useDispatch();
   const deleteTuitHandler = (id) => {
-    dispatch(deleteTuit(id))};
+    dispatch(deleteTuitThunk(id))
+  };
   library.add(fas);
    
   const [user,setUser]=useState(tuit);
-  const [isLiked, setIsLiked] = useState(tuit.liked);
+  // const [isLiked, setIsLiked] = useState(tuit.liked);
   // const [isLikes, setIsLikes] = useState(tuit.likes);
   
   useEffect(()=>{
     const test=async()=>{
       setUser(tuit);
-      setIsLiked(tuit.liked);
+      // setIsLiked(tuit.liked);
     };
     test();
   },[tuit]);
 
-  const handleLikeClick = () => {
-    setIsLiked(!isLiked);
+  const likeIncrease=()=>{
+    dispatch(updateTuitThunk({ ...user, likes: user.likes + 1 }));
+    setUser({...user,likes:user.likes+1})
+  }
+  const likeDecrease=()=>{
+    dispatch(updateTuitThunk({ ...user, dislikes: user.dislikes +1 }));
+    setUser({...user,dislikes:user.dislikes+1})
+  }
 
-    if(!isLiked)
-    {
+  // const handleLikeClick = () => {
+  //   setIsLiked(!isLiked);
+
+  //   if(!isLiked)
+  //   {
       
-      // setIsLikes(isLikes+1);
-          setUser({...user,likes:user.likes+1})
-    }
-    else
-    {
-      // setIsLikes(isLikes-1);
-      setUser({...user,likes:user.likes-1})
-    }
+  //     // setIsLikes(isLikes+1);
+  //         setUser({...user,likes:user.likes+1})
+  //   }
+  //   else
+  //   {
+  //     // setIsLikes(isLikes-1);
+  //     setUser({...user,likes:user.likes-1})
+  //   }
 
-  };
+  // };
 
 
  return(
@@ -89,12 +104,28 @@ const TuitItem = (
               <div class="col"> <FontAwesomeIcon icon={faRetweet}/> {user.retuits}</div>
               {/* <div class="col">  {tuit.liked?<FontAwesomeIcon icon={faHeart} style={{color:'red'}}/> :<FontAwesomeIcon icon={faHeart}/> }
           {tuit.likes}  </div> */}
-          <div class="col">   <FontAwesomeIcon
+          {/* <div class="col">   <FontAwesomeIcon
                                   icon={faHeart}
                                   style={{ color: isLiked ? 'red' : 'black' }}
                                   onClick={handleLikeClick}
                                 />
+          {user.likes}  </div> */}
+          <div class="col">   <FontAwesomeIcon
+                                  icon={faThumbsUp}
+                                  style={{color:'blue'}}
+                                  onClick={likeIncrease}
+                                
+                                />
           {user.likes}  </div>
+
+          <div class="col">   <FontAwesomeIcon
+                                  icon={faThumbsDown}
+                                  style={{color:'red'}}
+                                  onClick={likeDecrease}
+                                
+                                />
+          {user.dislikes}  </div>
+
           <div class="col"> <FontAwesomeIcon icon={faUpload}/></div>
        
           </div>
