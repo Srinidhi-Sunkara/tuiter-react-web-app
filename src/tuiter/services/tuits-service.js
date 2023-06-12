@@ -1,9 +1,11 @@
 import axios from 'axios';
 // const TUITS_API = 'http://localhost:4000/api/tuits';
+
+//commenting for the localhost to run
 const TUITS_API='https://tuiter-node-server-app-k5pw.onrender.com/api/tuits';
 
-// eslint-disable-next-line
-const API_BASE = process.env.REACT_APP_API_BASE;
+
+// const API_BASE = process.env.REACT_APP_API_BASE;
 // const TUITS_API = `${API_BASE}/tuits`;
 
 export const createTuit = async (tuit) => {
