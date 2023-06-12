@@ -22,6 +22,7 @@ const templateTuit = {
     "replies": 0,
     "retuits": 0,
     "likes": 0,
+    "dislikes":0
 }
 
 
@@ -40,7 +41,12 @@ const tuitsSlice = createSlice({
    [createTuitThunk.fulfilled]:
       (state, { payload }) => {
         state.loading = false
-        state.tuits.push(payload)
+      //   state.tuits.push(payload)
+        state.tuits.push({
+         ...payload,
+         ...templateTuit,
+         _id: (new Date()).getTime(),
+       })
     },
    [deleteTuitThunk.fulfilled] :
       (state, { payload }) => {
@@ -80,5 +86,5 @@ const tuitsSlice = createSlice({
  
 });
 
-export const {createTuit, deleteTuit} = tuitsSlice.actions;
+// export const {createTuit, deleteTuit} = tuitsSlice.actions;
 export default tuitsSlice.reducer;
